@@ -16,17 +16,6 @@
         color: #ffffff;
       }
 
-      /* ===== ANIMATED BACKGROUND ===== */
-      #particles-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-      }
-
       /* ===== MAIN BG ANIMATION ===== */
       .hero-bg {
         background-color: #000000;
@@ -164,16 +153,7 @@
         transform: scale(1.1);
       }
 
-      .chatbox {
-        transition:
-          opacity 0.3s ease,
-          transform 0.3s ease;
-      }
-      .chatbox.hidden-chat {
-        opacity: 0;
-        transform: translateY(20px);
-        pointer-events: none;
-      }
+      /* CSS Chatbox toggle animation is handled by Tailwind classes */
       .whatsapp-float {
         animation: pulse 2s infinite;
       }
@@ -313,9 +293,6 @@
       <div
         class="hero-bg w-full max-w-5xl rounded-3xl p-8 md:p-16 lg:p-24 shadow-2xl min-h-[80vh] flex flex-col justify-center"
       >
-        <!-- Particle Background Canvas -->
-        <canvas id="particles-canvas"></canvas>
-
         <!-- Animated Gradient Orbs -->
         <div class="animated-orb orb-1"></div>
         <div class="animated-orb orb-2"></div>
@@ -489,10 +466,12 @@
       </div>
     </main>
 
+    <!-- Chatbox Toggle -->
+    <input type="checkbox" id="chat-toggle" class="peer hidden" />
+
     <!-- Chatbox -->
     <div
-      id="chatbox"
-      class="chatbox hidden-chat fixed bottom-6 right-6 w-[350px] bg-white rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans border border-gray-200"
+      class="chatbox fixed bottom-6 right-6 w-[350px] bg-white rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans border border-gray-200 opacity-0 translate-y-4 pointer-events-none peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto transition-all duration-300"
     >
       <!-- Header -->
       <div
@@ -512,9 +491,9 @@
             <h3 class="font-semibold text-sm">Welcome to IKFtech!</h3>
           </div>
         </div>
-        <button
-          id="closeChatbox"
-          class="text-white hover:text-gray-200 focus:outline-none p-1 rounded-full hover:bg-white/20 transition"
+        <label
+          for="chat-toggle"
+          class="text-white hover:text-gray-200 focus:outline-none p-1 rounded-full hover:bg-white/20 transition cursor-pointer"
           title="Close chat"
         >
           <svg
@@ -530,7 +509,7 @@
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>
-        </button>
+        </label>
       </div>
 
       <!-- Chat Body -->
@@ -625,125 +604,17 @@
     </div>
 
     <!-- Floating WhatsApp Button -->
-    <a
-      href="https://wa.me/1234567890?text=Hello%20IKFtech!"
-      target="_blank"
-      rel="noopener noreferrer"
-      id="whatsappBtn"
-      class="whatsapp-float"
-      title="Chat on WhatsApp"
+    <label
+      for="chat-toggle"
+      class="whatsapp-float peer-checked:hidden cursor-pointer"
+      title="Open Chat"
     >
       <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
         <path
           d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.099.824z"
         />
       </svg>
-    </a>
+    </label>
 
-    <script>
-      // ===== CHATBOX FUNCTIONALITY =====
-      const chatbox = document.getElementById("chatbox");
-      const closeBtn = document.getElementById("closeChatbox");
-      const whatsappBtn = document.getElementById("whatsappBtn");
-
-      closeBtn.addEventListener("click", () => {
-        chatbox.classList.add("hidden-chat");
-        whatsappBtn.style.display = "flex";
-      });
-
-      whatsappBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        chatbox.classList.remove("hidden-chat");
-        whatsappBtn.style.display = "none";
-      });
-
-      // ===== PARALLAX EFFECT =====
-      const heroBg = document.querySelector(".hero-bg");
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        if (heroBg) {
-          heroBg.style.transform = `translateY(${scrollY * 0.15}px)`;
-        }
-        // Parallax for orbs
-        document.querySelectorAll(".animated-orb").forEach((orb, i) => {
-          const speed = 0.05 + i * 0.03;
-          orb.style.transform = `translateY(${scrollY * speed}px)`;
-        });
-      });
-
-      // ===== WAVE BACKGROUND =====
-      const canvas = document.getElementById("particles-canvas");
-      const ctx = canvas.getContext("2d");
-
-      let width, height;
-      let time = 0;
-
-      function resizeCanvas() {
-        const heroBgEl = document.querySelector(".hero-bg");
-        if (heroBgEl) {
-          width = canvas.width = heroBgEl.clientWidth;
-          height = canvas.height = heroBgEl.clientHeight;
-        } else {
-          width = canvas.width = window.innerWidth;
-          height = canvas.height = window.innerHeight;
-        }
-      }
-      resizeCanvas();
-      window.addEventListener("resize", resizeCanvas);
-
-      const waveCount = 20;
-      const baseSpeed = 0.01;
-
-      function drawWaves() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Move origin to center for diagonal rotation
-        ctx.save();
-        ctx.translate(width / 2, height / 2);
-        ctx.rotate(-0.1); // Slight tilt to match the design
-
-        const startX = -width;
-        const endX = width;
-
-        for (let i = 0; i < waveCount; i++) {
-          ctx.beginPath();
-          // Create a depth effect by changing line width and opacity
-          ctx.lineWidth = i < 5 ? 1.5 : i < 12 ? 0.8 : 0.3;
-          const alpha = ((waveCount - i) / waveCount) * 0.25;
-
-          // Alternate between cyan and blue for some depth
-          if (i % 3 === 0) {
-            ctx.strokeStyle = `rgba(0, 150, 255, ${alpha})`;
-          } else {
-            ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
-          }
-
-          const yOffset = (i - waveCount / 2) * 40;
-          const amplitude = 60 + i * 20;
-          const frequency = 0.001;
-          const phaseSpeed = baseSpeed * (1 + (waveCount - i) * 0.05);
-
-          ctx.moveTo(startX, yOffset);
-
-          for (let x = startX; x < endX; x += 30) {
-            // Combine sine waves to create a more organic, irregular fluid pattern
-            const y =
-              yOffset +
-              Math.sin(x * frequency + time * phaseSpeed) * amplitude +
-              Math.sin(x * frequency * 2.5 - time * phaseSpeed * 0.8) *
-                (amplitude * 0.4);
-
-            ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        }
-
-        ctx.restore();
-        time += 1;
-        requestAnimationFrame(drawWaves);
-      }
-
-      drawWaves();
-    </script>
   </body>
 </html>
