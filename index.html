@@ -9,174 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #111111;
-        color: #ffffff;
-      }
-
-      /* ===== MAIN BG ANIMATION ===== */
-      .hero-bg {
-        background-color: #000000;
-        border-radius: 2rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-bg::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(
-          from 0deg at 50% 50%,
-          rgba(0, 229, 255, 0.15) 0deg,
-          rgba(0, 100, 255, 0.05) 60deg,
-          rgba(0, 255, 180, 0.1) 120deg,
-          rgba(80, 0, 200, 0.06) 180deg,
-          rgba(0, 200, 255, 0.12) 240deg,
-          rgba(0, 255, 150, 0.05) 300deg,
-          rgba(0, 229, 255, 0.15) 360deg
-        );
-        animation: heroGradientSpin 10s linear infinite;
-        z-index: 0;
-      }
-
-      .hero-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 30% 20%, rgba(0, 229, 255, 0.12) 0%, transparent 50%),
-                    radial-gradient(ellipse at 70% 80%, rgba(0, 255, 180, 0.1) 0%, transparent 50%),
-                    radial-gradient(ellipse at 50% 50%, rgba(80, 0, 200, 0.06) 0%, transparent 60%);
-        animation: heroPulseGlow 3s ease-in-out infinite alternate;
-        z-index: 1;
-      }
-
-      @keyframes heroGradientSpin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      @keyframes heroPulseGlow {
-        0% { opacity: 0.5; }
-        100% { opacity: 1; }
-      }
-
-      /* Animated gradient orb */
-      .animated-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        z-index: 0;
-        animation: orbFloat 6s ease-in-out infinite;
-      }
-      .orb-1 {
-        width: 300px;
-        height: 300px;
-        background: rgba(0, 229, 255, 0.08);
-        top: -50px;
-        right: -50px;
-        animation-delay: 0s;
-      }
-      .orb-2 {
-        width: 250px;
-        height: 250px;
-        background: rgba(100, 0, 255, 0.06);
-        bottom: -80px;
-        left: -40px;
-        animation-delay: -3s;
-      }
-      .orb-3 {
-        width: 200px;
-        height: 200px;
-        background: rgba(0, 255, 150, 0.05);
-        top: 40%;
-        left: 50%;
-        animation-delay: -1.5s;
-      }
-
-      @keyframes orbFloat {
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1);
-        }
-        33% {
-          transform: translate(30px, -20px) scale(1.05);
-        }
-        66% {
-          transform: translate(-20px, 15px) scale(0.95);
-        }
-      }
-
-      .content-z {
-        position: relative;
-        z-index: 10;
-      }
-
-      .btn-cyan {
-        background-color: #00e5ff;
-        color: #000;
-      }
-      .btn-cyan:hover {
-        background-color: #00cce6;
-      }
-
-      .text-outline {
-        color: transparent;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-      }
-
-      .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25d366;
-        color: #fff;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-      }
-
-      /* CSS Chatbox toggle animation is handled by Tailwind classes */
-      .whatsapp-float {
-        animation: pulse 2s infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-        }
-      }
-
-      /* ===== PARALLAX ===== */
-      .parallax-section {
-        will-change: transform;
-      }
-    </style>
   </head>
-  <body class="antialiased min-h-screen flex flex-col">
+  <body
+    class="antialiased min-h-screen flex flex-col font-['Inter'] bg-[#111111] text-white overflow-x-hidden"
+  >
     <!-- Navigation Bar -->
     <nav
-      class="w-full bg-[#111111] py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800 sticky top-0 z-50 "
+      class="w-full bg-[#111111] py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800 sticky top-0 z-50"
     >
       <!-- Logo -->
       <div class="flex items-center gap-2 cursor-pointer">
@@ -194,7 +33,7 @@
       <div
         class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-300"
       >
-        <a href="#" class="hover:text-white flex items-center gap-1"
+        <a href="services.html" class="hover:text-white flex items-center gap-1"
           >Services
           <svg
             class="w-4 h-4"
@@ -291,22 +130,22 @@
     >
       <!-- Hero Section Container -->
       <div
-        class="hero-bg w-full max-w-5xl rounded-3xl p-8 md:p-16 lg:p-24 shadow-2xl min-h-[80vh] flex flex-col justify-center"
+        class="relative overflow-hidden bg-black rounded-3xl w-full max-w-5xl p-8 md:p-16 lg:p-24 shadow-2xl min-h-[80vh] flex flex-col pt-8 md:pt-12"
       >
-        <!-- Animated Gradient Orbs -->
-        <div class="animated-orb orb-1"></div>
-        <div class="animated-orb orb-2"></div>
-        <div class="animated-orb orb-3"></div>
-
-        <div class="content-z max-w-4xl">
+        <!-- Wireframe Canvas -->
+        <canvas
+          id="wireframe-canvas"
+          class="absolute inset-0 w-full h-full pointer-events-none"
+        ></canvas>
+        <div class="relative z-10 max-w-4xl flex flex-col flex-grow">
           <!-- Main Headline -->
           <h1
-            class="text-6xl md:text-8xl lg:text-[9rem] font-extrabold leading-none tracking-tight mb-2 "
+            class="text-6xl md:text-8xl lg:text-[9rem] font-extrabold leading-none tracking-tight mb-2"
           >
             <span class="text-white">#1 AI-FIRST</span>
           </h1>
           <h2
-            class="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8 "
+            class="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8"
           >
             <span class="text-white">DIGITAL ENGINEERING</span>
             <span class="text-gray-400 font-normal"
@@ -316,7 +155,7 @@
 
           <!-- Description Text -->
           <div
-            class="space-y-6 text-gray-300 text-sm md:text-base max-w-2xl mb-12 "
+            class="space-y-6 text-gray-300 text-sm md:text-base max-w-2xl mb-12"
           >
             <p>
               We help you design, build, and scale websites, web and mobile
@@ -331,7 +170,7 @@
           </div>
 
           <!-- Call to Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 ">
+          <div class="flex flex-col sm:flex-row gap-4">
             <!-- Book a Free Call Button -->
             <button
               class="group bg-white text-black font-semibold py-3 px-6 rounded-full flex items-center justify-between gap-4 hover:bg-gray-100 transition duration-300 border border-transparent"
@@ -382,8 +221,7 @@
           </div>
 
           <!-- Ratings Section -->
-          <div class="mt-16 ">
-            `
+          <div class="mt-16">
             <div class="mb-8">
               <div
                 class="h-[2px] bg-gradient-to-r from-transparent via-white/90 to-transparent"
@@ -465,6 +303,34 @@
         </div>
       </div>
     </main>
+
+    <!-- AI Benefits Section -->
+    <section class="w-full bg-white py-10 md:py-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-10">
+          <h2 class="text-black text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none">WHAT <span class="text-[#00efd4]">YOU</span></h2>
+          <h2 class="text-black text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none mt-1"><span class="text-[#00efd4]">GET</span> WHEN</h2>
+          <p class="text-black text-lg md:text-xl font-medium">Engineering Meets AI</p>
+         <p class="text-gray-600 text-xs md:text-sm mt-6 max-w-4xl leading-7">
+  As an AI-enabled software engineering partner, Phaedra Solutions combines senior engineering expertise with AI tools and workflows to deliver outcomes that traditional development teams cannot match on timeline, cost, or scale.
+</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
+          <div class="bg-[#f2fefd] rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
+            <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">30–80% Faster Delivery</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">AI-assisted workflows across design, engineering, and QA so your product reaches users faster with less rework.</p>
+          </div>
+          <div class="bg-[#cafff9] rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
+            <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">Cut Team Overhead by 40%</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">AI-augmented teams reduce the need for large in-house staff, multiple vendors, and lengthy hiring cycles.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
+            <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">Senior Talent, AI-Augmented</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Every engagement led by senior engineers using AI coding tools — not juniors learning on your project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Chatbox Toggle -->
     <input type="checkbox" id="chat-toggle" class="peer hidden" />
@@ -606,7 +472,7 @@
     <!-- Floating WhatsApp Button -->
     <label
       for="chat-toggle"
-      class="whatsapp-float peer-checked:hidden cursor-pointer"
+      class="fixed w-[60px] h-[60px] bottom-5 right-5 bg-[#25d366] text-white rounded-full flex items-center justify-center cursor-pointer z-[100] shadow-[2px_2px_3px_#999] hover:scale-110 transition-transform duration-300 peer-checked:hidden"
       title="Open Chat"
     >
       <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -616,5 +482,185 @@
       </svg>
     </label>
 
+    <script>
+      (function () {
+        const canvas = document.getElementById("wireframe-canvas");
+        const ctx = canvas.getContext("2d");
+        let width,
+          height,
+          time = 0;
+        let mouseX = 0.5,
+          mouseY = 0.5;
+
+        const CONFIG = {
+          COLS: 50,
+          ROWS: 30,
+          WAVE_SPEED: 0.35,
+          WAVE_AMP: 40,
+          WAVE_FREQ: 0.03,
+          DEPTH_SCALE: 0.0015,
+          CAMERA_Y: 140,
+          CAM_DIST: 600,
+          LINE_COLOR_R: 0,
+          LINE_COLOR_G: 229,
+          LINE_COLOR_B: 255,
+          BASE_ALPHA: 0.25,
+          GLOW_ALPHA: 0.5,
+          HORIZON_FADE: 0.6,
+          MOUSE_PARALLAX: 20,
+        };
+
+        function resize() {
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          var parent = canvas.parentElement;
+          width = parent.offsetWidth;
+          height = parent.offsetHeight;
+          canvas.width = width * dpr;
+          canvas.height = height * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        window.addEventListener("resize", resize);
+        resize();
+
+        document.addEventListener("mousemove", function (e) {
+          mouseX = e.clientX / width;
+          mouseY = e.clientY / height;
+        });
+
+        function project(x, y, z) {
+          var scale = CONFIG.CAM_DIST / (CONFIG.CAM_DIST + z);
+          var px = (x - width / 2) * scale + width / 2;
+          var py = (y - CONFIG.CAMERA_Y) * scale + CONFIG.CAMERA_Y;
+          return { x: px, y: py, scale: scale };
+        }
+
+        function getWaveHeight(col, row, t) {
+          var nx = col * CONFIG.WAVE_FREQ;
+          var ny = row * CONFIG.WAVE_FREQ * 0.6;
+          var wave1 =
+            Math.sin(nx * 3.0 + t * CONFIG.WAVE_SPEED) * CONFIG.WAVE_AMP;
+          var wave2 =
+            Math.sin(ny * 2.5 + t * CONFIG.WAVE_SPEED * 0.7 + 1.2) *
+            CONFIG.WAVE_AMP *
+            0.5;
+          var wave3 =
+            Math.cos(nx * 1.8 - ny * 1.2 + t * CONFIG.WAVE_SPEED * 0.5) *
+            CONFIG.WAVE_AMP *
+            0.3;
+          return wave1 + wave2 + wave3;
+        }
+
+        function render() {
+          ctx.clearRect(0, 0, width, height);
+
+          var offsetX = (mouseX - 0.5) * CONFIG.MOUSE_PARALLAX;
+          var offsetY = (mouseY - 0.5) * CONFIG.MOUSE_PARALLAX * 0.3;
+
+          var gridW = width * 1.6;
+          var gridH = height * 0.9;
+          var stepX = gridW / CONFIG.COLS;
+          var stepY = gridH / CONFIG.ROWS;
+          var startX = (width - gridW) / 2 + offsetX;
+          var startY = height * 0.15 + offsetY;
+
+          var points = [];
+
+          for (var row = 0; row <= CONFIG.ROWS; row++) {
+            points[row] = [];
+            for (var col = 0; col <= CONFIG.COLS; col++) {
+              var wx = startX + col * stepX;
+              var wy = startY + row * stepY;
+              var z = getWaveHeight(col, row, time);
+              var p = project(wx + offsetX * 0.3, wy, z);
+              points[row][col] = {
+                x: p.x,
+                y: p.y + z * p.scale * 0.6,
+                scale: p.scale,
+                z: z,
+              };
+            }
+          }
+
+          for (var row = 0; row <= CONFIG.ROWS; row++) {
+            var rowProgress = row / CONFIG.ROWS;
+            var alpha =
+              CONFIG.BASE_ALPHA * (1 - rowProgress * CONFIG.HORIZON_FADE);
+            if (alpha < 0.01) continue;
+
+            ctx.beginPath();
+            var started = false;
+            for (var col = 0; col <= CONFIG.COLS; col++) {
+              var p = points[row][col];
+              if (!started) {
+                ctx.moveTo(p.x, p.y);
+                started = true;
+              } else {
+                ctx.lineTo(p.x, p.y);
+              }
+            }
+            var glowAmount =
+              Math.abs(Math.sin(row * 0.15 + time * 0.3)) * CONFIG.GLOW_ALPHA;
+            ctx.strokeStyle =
+              "rgba(" +
+              CONFIG.LINE_COLOR_R +
+              "," +
+              CONFIG.LINE_COLOR_G +
+              "," +
+              CONFIG.LINE_COLOR_B +
+              "," +
+              (alpha + glowAmount) +
+              ")";
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+
+          for (var col = 0; col <= CONFIG.COLS; col++) {
+            var colProgress = col / CONFIG.COLS;
+            var edgeFade =
+              1 - Math.pow(Math.abs(colProgress - 0.5) * 2, 2) * 0.4;
+
+            ctx.beginPath();
+            var started = false;
+            for (var row = 0; row <= CONFIG.ROWS; row++) {
+              var p = points[row][col];
+              var rowFade = 1 - (row / CONFIG.ROWS) * CONFIG.HORIZON_FADE;
+              var alpha = CONFIG.BASE_ALPHA * rowFade * edgeFade;
+              if (alpha < 0.01) continue;
+              if (!started) {
+                ctx.moveTo(p.x, p.y);
+                started = true;
+              } else {
+                ctx.lineTo(p.x, p.y);
+              }
+            }
+            ctx.strokeStyle =
+              "rgba(" +
+              CONFIG.LINE_COLOR_R +
+              "," +
+              CONFIG.LINE_COLOR_G +
+              "," +
+              CONFIG.LINE_COLOR_B +
+              "," +
+              CONFIG.BASE_ALPHA * edgeFade * 0.7 +
+              ")";
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+          }
+
+          var grd = ctx.createLinearGradient(0, height * 0.3, 0, height * 0.7);
+          grd.addColorStop(0, "rgba(0, 229, 255, 0.0)");
+          grd.addColorStop(0.5, "rgba(0, 229, 255, 0.02)");
+          grd.addColorStop(1, "rgba(0, 229, 255, 0.0)");
+          ctx.fillStyle = grd;
+          ctx.fillRect(0, height * 0.3, width, height * 0.4);
+
+          time += 0.016;
+          requestAnimationFrame(render);
+        }
+
+        render();
+      })();
+    </script>
   </body>
 </html>
