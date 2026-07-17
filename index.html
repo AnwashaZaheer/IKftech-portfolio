@@ -6,16 +6,28 @@
     <title>IKftech Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll { animation: scroll-left 25s linear infinite; }
+      .pause-scroll:hover { animation-play-state: paused; }
+    </style>
   </head>
   <body
     class="antialiased min-h-screen flex flex-col font-['Inter'] bg-[#111111] text-white overflow-x-hidden"
   >
     <!-- Navigation Bar -->
     <nav
-      class="w-full bg-[#111111] py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800 sticky top-0 z-50"
+      class="w-full bg-[#111111] py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800"
     >
       <!-- Logo -->
       <div class="flex items-center gap-2 cursor-pointer">
@@ -126,11 +138,11 @@
 
     <!-- Main Content Area -->
     <main
-      class="flex-grow p-4 md:p-8 flex items-center justify-center bg-white"
+      class="flex-grow py-10 md:py-16 px-6 md:px-12 lg:px-24 flex items-center justify-center bg-white"
     >
       <!-- Hero Section Container -->
       <div
-        class="relative overflow-hidden bg-black rounded-3xl w-full max-w-5xl p-8 md:p-16 lg:p-24 shadow-2xl min-h-[80vh] flex flex-col pt-8 md:pt-12"
+        class="relative overflow-hidden bg-black rounded-3xl w-full max-w-7xl p-8 md:p-16 lg:p-24 shadow-2xl min-h-[80vh] flex flex-col pt-8 md:pt-12"
       >
         <!-- Wireframe Canvas -->
         <canvas
@@ -228,7 +240,7 @@
               ></div>
             </div>
             <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left"
+              class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center justify-items-center"
             >
               <div>
                 <div
@@ -308,11 +320,11 @@
     <section class="w-full bg-white py-10 md:py-16 px-6 md:px-12 lg:px-24">
       <div class="max-w-7xl mx-auto">
         <div class="mb-10">
-          <h2 class="text-black text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none">WHAT <span class="text-[#00efd4]">YOU</span></h2>
-          <h2 class="text-black text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none mt-1"><span class="text-[#00efd4]">GET</span> WHEN</h2>
+          <h2 class="text-black text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none">WHAT <span class="text-[#00efd4]">YOU</span></h2>
+          <h2 class="text-black text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-none mt-1"><span class="text-[#00efd4]">GET</span> WHEN</h2>
           <p class="text-black text-lg md:text-xl font-medium">Engineering Meets AI</p>
          <p class="text-gray-600 text-xs md:text-sm mt-6 max-w-4xl leading-7">
-  As an AI-enabled software engineering partner, Phaedra Solutions combines senior engineering expertise with AI tools and workflows to deliver outcomes that traditional development teams cannot match on timeline, cost, or scale.
+  As an AI-enabled software engineering partner, IKFtech combines senior engineering expertise with AI tools and workflows to deliver outcomes that traditional development teams cannot match on timeline, cost, or scale.
 </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
@@ -331,6 +343,190 @@
         </div>
       </div>
     </section>
+
+    <!-- Services Grid Section -->
+    <section class="w-full bg-white py-10 md:py-16 px-4 sm:px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-10">
+          <h3 class="text-black text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] font-semibold uppercase leading-none tracking-[-0.05em] mb-2">Completely</h3>
+          <h2 class="text-[#00efd4] text-[60px] sm:text-[80px] md:text-[130px] lg:text-[200px] font-black uppercase leading-[0.85] tracking-[-0.08em] mb-6">AI-First</h2>
+          <h3 class="text-black text-[22px] sm:text-[28px] md:text-[36px] lg:text-[44px] leading-tight mb-0">
+            <span class="font-semibold uppercase">Services</span>
+            <span class="font-normal uppercase"> for Modern Product Teams</span>
+          </h3>
+          <p class="text-zinc-700 text-sm sm:text-base md:text-lg lg:text-[22px] leading-[1.6] mt-4 max-w-[800px]">As your digital engineering company and innovation partner, we cover every phase of your product lifecycle.</p>
+          <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mt-4">
+            <span>01 - Product Engineering</span>
+          </button>
+        </div>
+        <div class="overflow-hidden max-w-6xl mb-8">
+          <div class="flex gap-4 animate-scroll hover:pause-scroll w-max">
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Web & Mobile App Development</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Custom websites, web apps, and mobile applications built with modern frameworks and AI-assisted coding.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Cloud & DevOps Engineering</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Scalable cloud architecture, CI/CD pipelines, and infrastructure automation to keep your systems secure.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">AI Integration & Automation</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Embed AI agents, chatbots, and intelligent workflows into your products to unlock new capabilities.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">UI/UX & Product Design</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">User-centered design systems, wireframes, and high-fidelity prototypes for intuitive digital experiences.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Quality Assurance & Testing</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Automated and manual testing strategies that catch bugs early and ensure rock-solid product quality.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Consulting & Strategy</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Technical advisory, architecture reviews, and AI transformation roadmaps tailored to your business goals.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Data Engineering & Analytics</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">End-to-end data pipelines, warehousing, and real-time analytics dashboards that drive smarter business decisions.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Cybersecurity & Compliance</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Security audits, penetration testing, and compliance frameworks to protect your products and user data.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Performance Optimization</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Speed audits, load testing, and code optimization to make your applications faster and more efficient.</p>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Web & Mobile App Development</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Custom websites, web apps, and mobile applications built with modern frameworks and AI-assisted coding.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Cloud & DevOps Engineering</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Scalable cloud architecture, CI/CD pipelines, and infrastructure automation to keep your systems secure.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">AI Integration & Automation</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Embed AI agents, chatbots, and intelligent workflows into your products to unlock new capabilities.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">UI/UX & Product Design</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">User-centered design systems, wireframes, and high-fidelity prototypes for intuitive digital experiences.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Quality Assurance & Testing</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Automated and manual testing strategies that catch bugs early and ensure rock-solid product quality.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Consulting & Strategy</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Technical advisory, architecture reviews, and AI transformation roadmaps tailored to your business goals.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Data Engineering & Analytics</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">End-to-end data pipelines, warehousing, and real-time analytics dashboards that drive smarter business decisions.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Cybersecurity & Compliance</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Security audits, penetration testing, and compliance frameworks to protect your products and user data.</p>
+            </div>
+            <div class="min-w-[260px] max-w-[280px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0">
+              <svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <h3 class="text-black text-lg font-semibold uppercase mb-2">Performance Optimization</h3>
+              <p class="text-gray-600 text-xs leading-relaxed">Speed audits, load testing, and code optimization to make your applications faster and more efficient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stacking Sections -->
+      <div id="stacking-container" style="position: relative; height: 300vh;">
+        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 1; background: white; padding: 0;">
+          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
+            <div class="max-w-7xl mx-auto">
+              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
+                <span>02 - AI and Automation</span>
+              </button>
+              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">AI-Powered Code Generation</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Leverage AI coding assistants to generate, review, and optimize code.</p>
+                </div>
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">Intelligent Chatbots & Agents</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Deploy custom AI chatbots and autonomous agents.</p>
+                </div>
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">AI Workflow Automation</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Automate repetitive tasks with AI-driven workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 2; background: white; padding: 0;">
+          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
+            <div class="max-w-7xl mx-auto">
+              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
+                <span>03 - Delivery and Quality</span>
+              </button>
+              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">AI-Powered Code Generation</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Leverage AI coding assistants to generate, review, and optimize code.</p>
+                </div>
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">Intelligent Chatbots & Agents</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Deploy custom AI chatbots and autonomous agents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 3; background: white; padding: 0;">
+          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
+            <div class="max-w-7xl mx-auto">
+              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
+                <span>04 - Scale and Advisory</span>
+              </button>
+              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">AI-Powered Code Generation</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Leverage AI coding assistants to generate, review, and optimize code.</p>
+                </div>
+                <div class="min-w-[240px] max-w-[260px] bg-white rounded-xl p-3 border border-black shadow-sm flex-shrink-0">
+                  <svg class="w-6 h-6 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                  <h3 class="text-black text-sm font-semibold uppercase mb-1">Intelligent Chatbots & Agents</h3>
+                  <p class="text-gray-600 text-xs leading-snug">Deploy custom AI chatbots and autonomous agents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Chatbox Toggle -->
     <input type="checkbox" id="chat-toggle" class="peer hidden" />
@@ -660,6 +856,33 @@
         }
 
         render();
+      })();
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      (function () {
+        const cards = gsap.utils.toArray(".stack-card");
+        if (cards.length < 2) return;
+
+        const container = document.getElementById("stacking-container");
+
+        cards.forEach((card, i) => {
+          if (i === 0) return;
+          gsap.fromTo(card,
+            { y: "100%" },
+            {
+              y: "0%",
+              ease: "none",
+              scrollTrigger: {
+                trigger: container,
+                start: () => `top+=${(i - 1) * window.innerHeight} top`,
+                end: () => `top+=${i * window.innerHeight} top`,
+                scrub: 0.5,
+                pin: false,
+              },
+            }
+          );
+        });
       })();
     </script>
   </body>
