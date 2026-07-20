@@ -486,9 +486,9 @@
     </section>
 
     <!-- Stacking Scroll Sections -->
-    <div id="stacking-container" class="bg-white">
-        <div class="stack-panel bg-white">
-          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
+    <div id="stacking-container" style="position: relative;">
+        <div class="stack-card" style="position: sticky; top: 0; z-index: 1; background: white;">
+          <div class="w-full px-6 md:px-12 lg:px-24 py-10"><div class="max-w-7xl mx-auto">
             <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5">02 - AI and Automation</button>
             <div class="flex gap-4 flex-wrap">
               <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">AI-Powered Code Generation</h3><p class="text-gray-600 text-sm leading-relaxed">Leverage AI coding assistants to generate, review, and optimize code across your entire codebase.</p></div>
@@ -497,18 +497,18 @@
             </div>
           </div></div>
         </div>
-        <div class="stack-panel">
-          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
-            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5 mt-6">03 - Delivery and Quality</button>
+        <div class="stack-card" style="position: sticky; top: 35px; z-index: 2; background: white; margin-top: -35px;">
+          <div class="w-full px-6 md:px-12 lg:px-24 pt-10 pb-10"><div class="max-w-7xl mx-auto">
+            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5">03 - Delivery and Quality</button>
             <div class="flex gap-4 flex-wrap">
               <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">CI/CD Pipeline Automation</h3><p class="text-gray-600 text-sm leading-relaxed">Build and manage fully automated CI/CD pipelines that deliver updates faster with zero downtime.</p></div>
               <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Quality Assurance &amp; Testing</h3><p class="text-gray-600 text-sm leading-relaxed">Automated and manual testing strategies that catch bugs early and ensure rock-solid product quality.</p></div>
             </div>
           </div></div>
         </div>
-        <div class="stack-panel">
-          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
-            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5 mt-6">04 - Scale and Advisory</button>
+        <div class="stack-card" style="position: sticky; top: 70px; z-index: 3; background: white; margin-top: -35px;">
+          <div class="w-full px-6 md:px-12 lg:px-24 pt-10 pb-10"><div class="max-w-7xl mx-auto">
+            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5">04 - Scale and Advisory</button>
             <div class="flex gap-4 flex-wrap">
               <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Consulting &amp; Strategy</h3><p class="text-gray-600 text-sm leading-relaxed">Technical advisory, architecture reviews, and AI transformation roadmaps tailored to your business goals.</p></div>
               <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Data Engineering &amp; Analytics</h3><p class="text-gray-600 text-sm leading-relaxed">End-to-end data pipelines, warehousing, and real-time analytics dashboards for smarter decisions.</p></div>
@@ -533,33 +533,33 @@
       <!-- Tech Logos Row 1 — scrolling left -->
       <div class="overflow-hidden mb-3 py-8">
         <div class="flex gap-8 md:gap-16 lg:gap-24 animate-scroll pause-scroll w-max items-center">
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/FastAPI/009688" alt="FastAPI" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Langchain/1C3C3C" alt="LangChain" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Meta/0668E1" alt="Meta Llama" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Docker/2496ED" alt="Docker" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Postgresql/4169E1" alt="PostgreSQL" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Python/3776AB" alt="Python" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/microsoftazure.svg" alt="Azure" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/amazon.svg" alt="AWS" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Mongodb/47A248" alt="MongoDB" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/N8n/EA4B71" alt="n8n" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Nodedotjs/339933" alt="Node.js" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/FastAPI/009688" alt="FastAPI" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Langchain/1C3C3C" alt="LangChain" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Meta/0668E1" alt="Meta Llama" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Docker/2496ED" alt="Docker" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Postgresql/4169E1" alt="PostgreSQL" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Python/3776AB" alt="Python" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/microsoftazure.svg" alt="Azure" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/amazon.svg" alt="AWS" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Mongodb/47A248" alt="MongoDB" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/N8n/EA4B71" alt="n8n" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Nodedotjs/339933" alt="Node.js" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
         </div>
       </div>
 
       <!-- Tech Logos Row 2 — scrolling left (same direction) -->
       <div class="overflow-hidden py-8">
         <div class="flex gap-8 md:gap-16 lg:gap-24 animate-scroll pause-scroll w-max items-center">
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Javascript/F7DF1E" alt="JavaScript" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Zapier/FF4A00" alt="Zapier" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/openai.svg" alt="OpenAI" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Huggingface/FFD21E" alt="Hugging Face" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Scikitlearn/F7931E" alt="Scikit-learn" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Googlecloud/4285F4" alt="GCP" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Django/092E20" alt="Django" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Numpy/013243" alt="NumPy" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Flask/000000" alt="Flask" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
-          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Kubernetes/326CE5" alt="Kubernetes" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Javascript/F7DF1E" alt="JavaScript" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Zapier/FF4A00" alt="Zapier" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/openai.svg" alt="OpenAI" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Huggingface/FFD21E" alt="Hugging Face" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Scikitlearn/F7931E" alt="Scikit-learn" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Googlecloud/4285F4" alt="GCP" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Django/092E20" alt="Django" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Numpy/013243" alt="NumPy" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Flask/000000" alt="Flask" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Kubernetes/326CE5" alt="Kubernetes" class="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-28 lg:w-28" /></div>
         </div>
       </div>
     </section>
