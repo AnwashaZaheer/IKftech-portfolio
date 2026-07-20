@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,6 +19,34 @@
         100% { transform: translateX(-50%); }
       }
       .animate-scroll { animation: scroll-left 25s linear infinite; }
+      .pause-scroll:hover { animation-play-state: paused; }
+
+      /* Tech logo floating animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      .tech-logo-item {
+        animation: float 4s ease-in-out infinite;
+        animation-delay: var(--float-delay, 0s);
+        transition: transform 0.3s ease;
+      }
+      .tech-logo-item:hover {
+        transform: scale(1.15);
+      }
+      .tech-logo-grid {
+        animation: none;
+      }
+      @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-scroll { animation: scroll-left 20s linear infinite; }
+      .animate-scroll-reverse { animation: scroll-right 20s linear infinite; }
       .pause-scroll:hover { animation-play-state: paused; }
     </style>
   </head>
@@ -329,7 +357,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl">
           <div class="bg-[#f2fefd] rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
-            <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">30–80% Faster Delivery</h3>
+            <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">30â€“80% Faster Delivery</h3>
             <p class="text-gray-600 text-base leading-relaxed">AI-assisted workflows across design, engineering, and QA so your product reaches users faster with less rework.</p>
           </div>
           <div class="bg-[#cafff9] rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
@@ -338,7 +366,7 @@
           </div>
           <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm">
             <h3 class="text-black text-2xl md:text-3xl font-medium leading-tight uppercase mb-3">Senior Talent, AI-Augmented</h3>
-            <p class="text-gray-600 text-base leading-relaxed">Every engagement led by senior engineers using AI coding tools — not juniors learning on your project.</p>
+            <p class="text-gray-600 text-base leading-relaxed">Every engagement led by senior engineers using AI coding tools â€” not juniors learning on your project.</p>
           </div>
         </div>
       </div>
@@ -455,85 +483,93 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Stacking Sections -->
-      <div id="stacking-container" style="position: relative; height: 300vh;">
-        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 1; background: white; padding: 0;">
-          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
-            <div class="max-w-7xl mx-auto">
-              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
-                <span>02 - AI and Automation</span>
-              </button>
-              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">AI-Powered Code Generation</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Leverage AI coding assistants to generate, review, and optimize code.</p>
-                </div>
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">Intelligent Chatbots & Agents</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Deploy custom AI chatbots and autonomous agents.</p>
-                </div>
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">AI Workflow Automation</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Automate repetitive tasks with AI-driven workflows.</p>
-                </div>
-              </div>
+    <!-- Stacking Scroll Sections -->
+    <div id="stacking-container" class="bg-white">
+        <div class="stack-panel bg-white">
+          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
+            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5">02 - AI and Automation</button>
+            <div class="flex gap-4 flex-wrap">
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">AI-Powered Code Generation</h3><p class="text-gray-600 text-sm leading-relaxed">Leverage AI coding assistants to generate, review, and optimize code across your entire codebase.</p></div>
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Intelligent Chatbots &amp; Agents</h3><p class="text-gray-600 text-sm leading-relaxed">Deploy custom AI chatbots and autonomous agents that handle support, sales, and internal workflows.</p></div>
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">AI Workflow Automation</h3><p class="text-gray-600 text-sm leading-relaxed">Automate repetitive business processes with intelligent AI-driven pipelines and decision engines.</p></div>
             </div>
-          </div>
+          </div></div>
         </div>
-        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 2; background: white; padding: 0;">
-          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
-            <div class="max-w-7xl mx-auto">
-              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
-                <span>03 - Delivery and Quality</span>
-              </button>
-              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">AI-Powered Code Generation</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Leverage AI coding assistants to generate, review, and optimize code.</p>
-                </div>
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">Intelligent Chatbots & Agents</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Deploy custom AI chatbots and autonomous agents.</p>
-                </div>
-              </div>
+        <div class="stack-panel">
+          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
+            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5 mt-6">03 - Delivery and Quality</button>
+            <div class="flex gap-4 flex-wrap">
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">CI/CD Pipeline Automation</h3><p class="text-gray-600 text-sm leading-relaxed">Build and manage fully automated CI/CD pipelines that deliver updates faster with zero downtime.</p></div>
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Quality Assurance &amp; Testing</h3><p class="text-gray-600 text-sm leading-relaxed">Automated and manual testing strategies that catch bugs early and ensure rock-solid product quality.</p></div>
             </div>
-          </div>
+          </div></div>
         </div>
-        <div class="stack-card" style="position: sticky; top: 0; height: 100vh; z-index: 3; background: white; padding: 0;">
-          <div class="w-full px-6 md:px-12 lg:px-24 pt-4">
-            <div class="max-w-7xl mx-auto">
-              <button class="group bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full hover:bg-[#00796b] transition duration-300 w-fit mb-3">
-                <span>04 - Scale and Advisory</span>
-              </button>
-              <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">AI-Powered Code Generation</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Leverage AI coding assistants to generate, review, and optimize code.</p>
-                </div>
-                <div class="min-w-[300px] max-w-[320px] bg-white rounded-2xl p-6 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm flex-shrink-0 cursor-default">
-                  <svg class="w-10 h-10 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                  <h3 class="text-black text-2xl font-semibold uppercase mb-2">Intelligent Chatbots & Agents</h3>
-                  <p class="text-gray-600 text-base leading-relaxed">Deploy custom AI chatbots and autonomous agents.</p>
-                </div>
-              </div>
+        <div class="stack-panel">
+          <div class="w-full px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto">
+            <button class="bg-[#00897a] text-white font-semibold py-2 px-5 rounded-full w-fit mb-5 mt-6">04 - Scale and Advisory</button>
+            <div class="flex gap-4 flex-wrap">
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Consulting &amp; Strategy</h3><p class="text-gray-600 text-sm leading-relaxed">Technical advisory, architecture reviews, and AI transformation roadmaps tailored to your business goals.</p></div>
+              <div class="min-w-[280px] max-w-[300px] bg-white rounded-2xl p-5 border border-black hover:border-[#00efd4]/40 transition-all duration-300 shadow-sm cursor-default"><svg class="w-8 h-8 text-black mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg><h3 class="text-black text-lg font-semibold uppercase mb-2">Data Engineering &amp; Analytics</h3><p class="text-gray-600 text-sm leading-relaxed">End-to-end data pipelines, warehousing, and real-time analytics dashboards for smarter decisions.</p></div>
             </div>
-          </div>
+           </div></div>
         </div>
       </div>
+
+    <!-- Book a Free Call Section -->
+    <section class="w-full bg-white py-10 md:py-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto mt-16">
+        <div class="mb-8">
+          <h2 class="text-black text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] font-extrabold leading-none">WE <span class="text-[#00efd4]">REDUCE</span></h2>
+          <h2 class="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-none mt-1">DEVELOPMENT TIME AND COST BY 30–80%</h2>
+          <p class="text-gray-600 text-xs md:text-sm mt-6 leading-7 lg:whitespace-nowrap">Our AI-first engineering stack combines AI coding assistants, automation platforms, testing systems, and cloud-native workflows to accelerate software delivery and improve engineering efficiency.</p>
+          <a href="#" class="group inline-flex items-center gap-3 bg-[#00897a] hover:bg-[#00796b] text-white font-semibold py-3 px-6 rounded-full transition duration-300 mt-6">
+            <span class="uppercase tracking-wide">Book a Free Call</span>
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+          </a>
+        </div>
+
+      <!-- Tech Logos Row 1 — scrolling left -->
+      <div class="overflow-hidden mb-3 py-8">
+        <div class="flex gap-8 md:gap-16 lg:gap-24 animate-scroll pause-scroll w-max items-center">
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/FastAPI/009688" alt="FastAPI" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Langchain/1C3C3C" alt="LangChain" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Meta/0668E1" alt="Meta Llama" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Docker/2496ED" alt="Docker" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Postgresql/4169E1" alt="PostgreSQL" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Python/3776AB" alt="Python" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/microsoftazure.svg" alt="Azure" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/amazon.svg" alt="AWS" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Mongodb/47A248" alt="MongoDB" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/N8n/EA4B71" alt="n8n" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Nodedotjs/339933" alt="Node.js" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+        </div>
+      </div>
+
+      <!-- Tech Logos Row 2 — scrolling left (same direction) -->
+      <div class="overflow-hidden py-8">
+        <div class="flex gap-8 md:gap-16 lg:gap-24 animate-scroll pause-scroll w-max items-center">
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Javascript/F7DF1E" alt="JavaScript" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Zapier/FF4A00" alt="Zapier" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/openai.svg" alt="OpenAI" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Huggingface/FFD21E" alt="Hugging Face" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Scikitlearn/F7931E" alt="Scikit-learn" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Googlecloud/4285F4" alt="GCP" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Django/092E20" alt="Django" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Numpy/013243" alt="NumPy" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Flask/000000" alt="Flask" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+          <div class="tech-logo-item"><img src="https://cdn.simpleicons.org/Kubernetes/326CE5" alt="Kubernetes" class="h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28 lg:h-40 lg:w-40" /></div>
+        </div>
+      </div>
+    </section>
 
     <!-- Chatbox Toggle -->
     <input type="checkbox" id="chat-toggle" class="peer hidden" />
 
     <!-- Chatbox -->
     <div
-      class="chatbox fixed bottom-6 right-6 w-[350px] bg-white rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans border border-gray-200 opacity-0 translate-y-4 pointer-events-none peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto transition-all duration-300"
+      class="chatbox fixed bottom-6 right-6 w-[calc(100vw-2rem)] sm:w-[350px] max-w-[350px] bg-white rounded-xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans border border-gray-200 opacity-0 translate-y-4 pointer-events-none peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto transition-all duration-300"
     >
       <!-- Header -->
       <div
@@ -858,32 +894,11 @@
         render();
       })();
 
-      gsap.registerPlugin(ScrollTrigger);
-
-      (function () {
-        const cards = gsap.utils.toArray(".stack-card");
-        if (cards.length < 2) return;
-
-        const container = document.getElementById("stacking-container");
-
-        cards.forEach((card, i) => {
-          if (i === 0) return;
-          gsap.fromTo(card,
-            { y: "100%" },
-            {
-              y: "0%",
-              ease: "none",
-              scrollTrigger: {
-                trigger: container,
-                start: () => `top+=${(i - 1) * window.innerHeight} top`,
-                end: () => `top+=${i * window.innerHeight} top`,
-                scrub: 0.5,
-                pin: false,
-              },
-            }
-          );
-        });
-      })();
+      
     </script>
   </body>
 </html>
+
+
+
+
